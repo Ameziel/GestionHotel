@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GestionHotel.Apis.admin;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
 namespace GestionHotel.Apis.administration

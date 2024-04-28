@@ -1,4 +1,4 @@
-﻿namespace GestionHotel.Apis.administration
+﻿namespace GestionHotel.Apis.admin
 {
     public enum UserRole
     {

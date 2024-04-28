@@ -1,11 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using GestionHotel.Apis.admin;
+using GestionHotel.Apis.administration;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GestionHotel.Apis.administration.controllers
+namespace GestionHotel.Apis.controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class userApp_controller : ControllerBase
+    public class UserAPPController : ControllerBase
     {
         private readonly AppDbContext _context;
 
@@ -18,14 +20,14 @@ namespace GestionHotel.Apis.administration.controllers
         [HttpGet]
         public ActionResult<IEnumerable<UserAPP>> GetUserAPPs()
         {
-            return _context.UserAPP.ToList();
+            return _context.Users.ToList();
         }
 
         // GET: /UserAPP/{id}
         [HttpGet("{id}")]
         public ActionResult<UserAPP> GetUserAPP(Guid id)
         {
-            var userAPP = _context.UserAPP.Find(id);
+            var userAPP = _context.Users.Find(id);
 
             if (userAPP == null)
             {
@@ -39,7 +41,7 @@ namespace GestionHotel.Apis.administration.controllers
         [HttpPost]
         public ActionResult<UserAPP> PostUserAPP(UserAPP userAPP)
         {
-            _context.UserAPP.Add(userAPP);
+            _context.Users.Add(userAPP);
             _context.SaveChanges();
 
             return CreatedAtAction(nameof(GetUserAPP), new { id = userAPP.Id }, userAPP);
@@ -64,14 +66,14 @@ namespace GestionHotel.Apis.administration.controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteUserAPP(Guid id)
         {
-            var userAPP = _context.UserAPP.Find(id);
+            var userAPP = _context.Users.Find(id);
 
             if (userAPP == null)
             {
                 return NotFound();
             }
 
-            _context.UserAPP.Remove(userAPP);
+            _context.Users.Remove(userAPP);
             _context.SaveChanges();
 
             return NoContent();

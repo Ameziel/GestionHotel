@@ -1,4 +1,4 @@
-﻿namespace GestionHotel.Apis.administration
+﻿namespace GestionHotel.Apis.admin
 {
     public interface IRepository<TEntity> where TEntity : class
     {

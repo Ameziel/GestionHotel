@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GestionHotel.Apis.administration;
+using Microsoft.EntityFrameworkCore;
 
-namespace GestionHotel.Apis.administration
+namespace GestionHotel.Apis.admin
 {
     public class UserAPPRepository
     {
@@ -16,7 +17,8 @@ namespace GestionHotel.Apis.administration
             _context.SaveChanges();
         }
 
-        public UserAPP GetUserById(Guid id) { 
+        public UserAPP GetUserById(Guid id)
+        {
             return _context.Users.FirstOrDefault(x => x.Id == id);
         }
 

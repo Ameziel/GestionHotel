@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GestionHotel.Apis.administration
+namespace GestionHotel.Apis.admin
 {
     [Table("users")]
     public class UserAPP
